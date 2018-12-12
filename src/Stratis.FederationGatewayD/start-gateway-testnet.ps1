@@ -1,34 +1,34 @@
 ﻿#############################
 #    UPDATE THESE VALUES    #
 #############################
-$root_datadir = ""     # Ex: C:\Users\matthieu\AppData\Roaming\StratisNode
-$path_to_federationgatewayd = "" # Ex: C:\Users\matthieu\source\repos\FederatedSidechains\src\Stratis.FederationGatewayD
+$root_datadir = "C:\Users\user\AppData\Roaming\StratisNode\rootForSidechains"     # Ex: C:\Users\matthieu\AppData\Roaming\StratisNode
+$path_to_federationgatewayd = "C:\Users\user\Documents\GitHub\MyForkFederatedSidechains\src\Stratis.FederationGatewayD" # Ex: C:\Users\matthieu\source\repos\FederatedSidechains\src\Stratis.FederationGatewayD
 
 # Please add the path to the federationKey.dat file generated when using federation setup tool.
-$path_to_mining_key_dat_file = "" # Ex: C:\Users\matthieu\Documents\My federation\federationKey.dat
+$path_to_mining_key_dat_file = "C:\Users\user\Documents\GitHub\MyForkFederatedSidechains\src\FedKeyPairGen\bin\Debug\netcoreapp2.1\federationKey.dat" # Ex: C:\Users\matthieu\Documents\My federation\federationKey.dat
 
-$multisig_public_key = "" # Ex: 03b824a9500f17c9fe7a4e3bb660e38b97b66ed3c78749146f2f31c06569cf905c
-$mining_public_key = ""   # Ex: 0248de019680c6f18e434547c8c9d48965b656b8e5e70c5a5564cfb1270db79a11
+$multisig_public_key = "03b824a9500f17c9fe7a4e3bb660e38b97b66ed3c78749146f2f31c06569cf905c" # Ex: 03b824a9500f17c9fe7a4e3bb660e38b97b66ed3c78749146f2f31c06569cf905c
+$mining_public_key = "0248de019680c6f18e434547c8c9d48965b656b8e5e70c5a5564cfb1270db79a11"   # Ex: 0248de019680c6f18e434547c8c9d48965b656b8e5e70c5a5564cfb1270db79a11
 
 # Keep this short.
-$nickname = "" # Ex: matt
+$nickname = "noescape0" # Ex: matt
 
 # The list of ips of the other federated nodes. Please note the ports used to connect with other nodes.
-$mainchain_federationips = "" # Ex: 127.0.0.1:26178,127.0.0.2:26178,127.0.0.3:26178,127.0.0.4:26178,127.0.0.5:26178
-$sidechain_federationips = "" # Ex: 127.0.0.1:26179,127.0.0.2:26179,127.0.0.3:26179,127.0.0.4:26179,127.0.0.5:26179
+$mainchain_federationips = "127.0.0.1:26178,127.0.0.2:26178,127.0.0.3:26178,127.0.0.4:26178,127.0.0.5:26178" # Ex: 127.0.0.1:26178,127.0.0.2:26178,127.0.0.3:26178,127.0.0.4:26178,127.0.0.5:26178
+$sidechain_federationips = "127.0.0.1:26179,127.0.0.2:26179,127.0.0.3:26179,127.0.0.4:26179,127.0.0.5:26179" # Ex: 127.0.0.1:26179,127.0.0.2:26179,127.0.0.3:26179,127.0.0.4:26179,127.0.0.5:26179
 
 ######################################
 #    UPDATE THIS BUT DO NOT SHARE    #
 ######################################
 
 # Please add the mnemonic generated when using federation setup tool.
-$multisig_mnemonic = "" #Ex: panther rich spend divert army squeeze surround thank spell entire dream split 
+$multisig_mnemonic = "panther rich spend divert army squeeze surround thank spell entire dream split" #Ex: panther rich spend divert army squeeze surround thank spell entire dream split 
 
 # Enter a password - used to protect your multisig wallet.
-$multisig_password = "" # Ex: myP@55w0rd!
+$multisig_password = "myP@55w0rd!" # Ex: myP@55w0rd!
 
 # Enter a different password - used to protect the wallet where mining rewards are sent.
-$mining_wallet_password = "" # Ex: myP@55w0rd!
+$mining_wallet_password = "myP@55w0rd!" # Ex: myP@55w0rd!
 
 ######################################
 #         CHECK USER'S SETUP         #
@@ -61,11 +61,11 @@ if( -not (Test-Path -Path $path_to_federationgatewayd))
 	Break
 }
 
-if(![System.IO.File]::Exists($path_to_mining_key_dat_file))
-{
-	Write-Host "Error: A file named FederationKey.dat couldn't be found at path '$path_to_mining_key_dat_file'." -foregroundcolor "Red"
-	Break
-}
+#if(![System.IO.File]::Exists($path_to_mining_key_dat_file))
+#{
+#	Write-Host "Error: A file named FederationKey.dat couldn't be found at path '$path_to_mining_key_dat_file'." -foregroundcolor "Red"
+#	Break
+#}
 
 # TODO: add more checks
 
